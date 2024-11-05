@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AECDB1BC2CDA5EED0019DEF3 /* AristaModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECDB1B32CDA5EEC0019DEF3 /* AristaModels.framework */; };
+		AECDB1D82CDA60910019DEF3 /* Arista.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1D52CDA60910019DEF3 /* Arista.xcdatamodeld */; };
+		AECDB1D92CDA60910019DEF3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1D62CDA60910019DEF3 /* Persistence.swift */; };
+		AECDB1FF2CDA69A20019DEF3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1FE2CDA69A20019DEF3 /* UserRepository.swift */; };
+		AECDB2002CDA69A20019DEF3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1FE2CDA69A20019DEF3 /* UserRepository.swift */; };
+		AECDB2072CDA6C420019DEF3 /* WorkoutSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2062CDA6C420019DEF3 /* WorkoutSession+CoreDataProperties.swift */; };
+		AECDB2082CDA6C420019DEF3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2042CDA6C420019DEF3 /* User+CoreDataProperties.swift */; };
+		AECDB2092CDA6C420019DEF3 /* SleepSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2022CDA6C420019DEF3 /* SleepSession+CoreDataProperties.swift */; };
+		AECDB20A2CDA6C420019DEF3 /* SleepSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2012CDA6C420019DEF3 /* SleepSession+CoreDataClass.swift */; };
+		AECDB20B2CDA6C420019DEF3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2032CDA6C420019DEF3 /* User+CoreDataClass.swift */; };
+		AECDB20C2CDA6C420019DEF3 /* WorkoutSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB2052CDA6C420019DEF3 /* WorkoutSession+CoreDataClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AECDB1BD2CDA5EED0019DEF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AECDB1AA2CDA5EEC0019DEF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AECDB1B22CDA5EEC0019DEF3;
+			remoteInfo = AristaModels;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AECDB1B32CDA5EEC0019DEF3 /* AristaModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AristaModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECDB1BB2CDA5EED0019DEF3 /* AristaModelsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AristaModelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECDB1D62CDA60910019DEF3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AECDB1D72CDA60910019DEF3 /* Arista.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arista.xcdatamodel; sourceTree = "<group>"; };
+		AECDB1FE2CDA69A20019DEF3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		AECDB2012CDA6C420019DEF3 /* SleepSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SleepSession+CoreDataClass.swift"; path = "../SleepSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AECDB2022CDA6C420019DEF3 /* SleepSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SleepSession+CoreDataProperties.swift"; path = "../SleepSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AECDB2032CDA6C420019DEF3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AECDB2042CDA6C420019DEF3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AECDB2052CDA6C420019DEF3 /* WorkoutSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorkoutSession+CoreDataClass.swift"; path = "../WorkoutSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AECDB2062CDA6C420019DEF3 /* WorkoutSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorkoutSession+CoreDataProperties.swift"; path = "../WorkoutSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AECDB1B02CDA5EEC0019DEF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AECDB1B82CDA5EED0019DEF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AECDB1BC2CDA5EED0019DEF3 /* AristaModels.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AECDB1A92CDA5EEC0019DEF3 = {
+			isa = PBXGroup;
+			children = (
+				AECDB1D22CDA5F780019DEF3 /* CoreData */,
+				AECDB1FE2CDA69A20019DEF3 /* UserRepository.swift */,
+				AECDB1B42CDA5EEC0019DEF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AECDB1B42CDA5EEC0019DEF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AECDB1B32CDA5EEC0019DEF3 /* AristaModels.framework */,
+				AECDB1BB2CDA5EED0019DEF3 /* AristaModelsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AECDB1D22CDA5F780019DEF3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AECDB2012CDA6C420019DEF3 /* SleepSession+CoreDataClass.swift */,
+				AECDB2022CDA6C420019DEF3 /* SleepSession+CoreDataProperties.swift */,
+				AECDB2032CDA6C420019DEF3 /* User+CoreDataClass.swift */,
+				AECDB2042CDA6C420019DEF3 /* User+CoreDataProperties.swift */,
+				AECDB2052CDA6C420019DEF3 /* WorkoutSession+CoreDataClass.swift */,
+				AECDB2062CDA6C420019DEF3 /* WorkoutSession+CoreDataProperties.swift */,
+				AECDB1D52CDA60910019DEF3 /* Arista.xcdatamodeld */,
+				AECDB1D62CDA60910019DEF3 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AECDB1AE2CDA5EEC0019DEF3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AECDB1B22CDA5EEC0019DEF3 /* AristaModels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AECDB1C42CDA5EED0019DEF3 /* Build configuration list for PBXNativeTarget "AristaModels" */;
+			buildPhases = (
+				AECDB1AE2CDA5EEC0019DEF3 /* Headers */,
+				AECDB1AF2CDA5EEC0019DEF3 /* Sources */,
+				AECDB1B02CDA5EEC0019DEF3 /* Frameworks */,
+				AECDB1B12CDA5EEC0019DEF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AristaModels;
+			packageProductDependencies = (
+			);
+			productName = AristaModels;
+			productReference = AECDB1B32CDA5EEC0019DEF3 /* AristaModels.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AECDB1BA2CDA5EED0019DEF3 /* AristaModelsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AECDB1C92CDA5EED0019DEF3 /* Build configuration list for PBXNativeTarget "AristaModelsTests" */;
+			buildPhases = (
+				AECDB1B72CDA5EED0019DEF3 /* Sources */,
+				AECDB1B82CDA5EED0019DEF3 /* Frameworks */,
+				AECDB1B92CDA5EED0019DEF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AECDB1BE2CDA5EED0019DEF3 /* PBXTargetDependency */,
+			);
+			name = AristaModelsTests;
+			packageProductDependencies = (
+			);
+			productName = AristaModelsTests;
+			productReference = AECDB1BB2CDA5EED0019DEF3 /* AristaModelsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AECDB1AA2CDA5EEC0019DEF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					AECDB1B22CDA5EEC0019DEF3 = {
+						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
+					};
+					AECDB1BA2CDA5EED0019DEF3 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = AECDB1AD2CDA5EEC0019DEF3 /* Build configuration list for PBXProject "AristaModels" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AECDB1A92CDA5EEC0019DEF3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AECDB1B42CDA5EEC0019DEF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AECDB1B22CDA5EEC0019DEF3 /* AristaModels */,
+				AECDB1BA2CDA5EED0019DEF3 /* AristaModelsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AECDB1B12CDA5EEC0019DEF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AECDB1B92CDA5EED0019DEF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AECDB1AF2CDA5EEC0019DEF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AECDB2072CDA6C420019DEF3 /* WorkoutSession+CoreDataProperties.swift in Sources */,
+				AECDB2082CDA6C420019DEF3 /* User+CoreDataProperties.swift in Sources */,
+				AECDB2092CDA6C420019DEF3 /* SleepSession+CoreDataProperties.swift in Sources */,
+				AECDB20A2CDA6C420019DEF3 /* SleepSession+CoreDataClass.swift in Sources */,
+				AECDB20B2CDA6C420019DEF3 /* User+CoreDataClass.swift in Sources */,
+				AECDB20C2CDA6C420019DEF3 /* WorkoutSession+CoreDataClass.swift in Sources */,
+				AECDB1D82CDA60910019DEF3 /* Arista.xcdatamodeld in Sources */,
+				AECDB1D92CDA60910019DEF3 /* Persistence.swift in Sources */,
+				AECDB2002CDA69A20019DEF3 /* UserRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AECDB1B72CDA5EED0019DEF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AECDB1FF2CDA69A20019DEF3 /* UserRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AECDB1BE2CDA5EED0019DEF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AECDB1B22CDA5EEC0019DEF3 /* AristaModels */;
+			targetProxy = AECDB1BD2CDA5EED0019DEF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AECDB1C52CDA5EED0019DEF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FQJ5XK4959;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.AristaModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AECDB1C62CDA5EED0019DEF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FQJ5XK4959;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.AristaModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AECDB1C72CDA5EED0019DEF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AECDB1C82CDA5EED0019DEF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AECDB1CA2CDA5EED0019DEF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQJ5XK4959;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.AristaModelsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AECDB1CB2CDA5EED0019DEF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQJ5XK4959;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.AristaModelsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AECDB1AD2CDA5EEC0019DEF3 /* Build configuration list for PBXProject "AristaModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AECDB1C72CDA5EED0019DEF3 /* Debug */,
+				AECDB1C82CDA5EED0019DEF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AECDB1C42CDA5EED0019DEF3 /* Build configuration list for PBXNativeTarget "AristaModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AECDB1C52CDA5EED0019DEF3 /* Debug */,
+				AECDB1C62CDA5EED0019DEF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AECDB1C92CDA5EED0019DEF3 /* Build configuration list for PBXNativeTarget "AristaModelsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AECDB1CA2CDA5EED0019DEF3 /* Debug */,
+				AECDB1CB2CDA5EED0019DEF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AECDB1D52CDA60910019DEF3 /* Arista.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AECDB1D72CDA60910019DEF3 /* Arista.xcdatamodel */,
+			);
+			currentVersion = AECDB1D72CDA60910019DEF3 /* Arista.xcdatamodel */;
+			path = Arista.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AECDB1AA2CDA5EEC0019DEF3 /* Project object */;
+}
