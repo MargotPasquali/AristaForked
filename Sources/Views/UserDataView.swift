@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import AristaPersistence
+
+// MARK: - UserDataView
 
 struct UserDataView: View {
     @ObservedObject var viewModel: UserDataViewModel
@@ -28,6 +31,7 @@ struct UserDataView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     UserDataView(viewModel: UserDataViewModel(context: PersistenceController.preview.container.viewContext))
 }

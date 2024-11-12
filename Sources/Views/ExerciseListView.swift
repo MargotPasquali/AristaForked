@@ -6,62 +6,94 @@
 //
 
 import SwiftUI
+import AristaPersistence
+
+// MARK: - ExerciseListView
 
 struct ExerciseListView: View {
+    
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: ExerciseListViewModel
     @State private var showingAddExerciseView = false
+
+    // MARK: - Body
     
     var body: some View {
         NavigationView {
             List(viewModel.exercises) { exercise in
-                HStack {
-                    Image(systemName: iconForCategory(exercise.category))
-                    VStack(alignment: .leading) {
-                        Text(exercise.category)
-                            .font(.headline)
-                        Text("Durée: \(exercise.duration) min")
-                            .font(.subheadline)
-                        Text(exercise.date.formatted())
-                            .font(.subheadline)
-                        
-                    }
-                    Spacer()
-                    IntensityIndicator(intensity: exercise.intensity)
-                }
+                exerciseRow(for: exercise)
             }
             .navigationTitle("Exercices")
-            .navigationBarItems(trailing: Button(action: {
-                showingAddExerciseView = true
-            }) {
-                Image(systemName: "plus")
-            })
+            .navigationBarItems(trailing: addExerciseButton)
+            .sheet(isPresented: $showingAddExerciseView) {
+                AddExerciseView(
+                    viewModel: AddExerciseViewModel(context: viewModel.viewContext)) {
+                        viewModel.fetchExercises() // Rafraîchit la liste après ajout d’un exercice
+                    }
+            }
         }
-        .sheet(isPresented: $showingAddExerciseView) {
-            AddExerciseView(viewModel: AddExerciseViewModel(context: viewModel.viewContext))
+    }
+
+    // MARK: - Subviews
+
+    private func exerciseRow(for exercise: WorkoutSession) -> some View {
+        HStack {
+            Image(systemName: iconForCategory(exercise.category.rawValue))
+            VStack(alignment: .leading) {
+                Text(exercise.category.rawValue)
+                    .font(.headline)
+                Text("Durée: \(Int64(exercise.duration)) min")
+                    .font(.subheadline)
+                Text(exercise.start.formatted())
+                    .font(.subheadline)
+            }
+            Spacer()
+            IntensityIndicator(intensity: Int64(exercise.intensity))
         }
-        
     }
     
+    private var addExerciseButton: some View {
+        Button(action: {
+            showingAddExerciseView = true
+        }) {
+            Image(systemName: "plus")
+        }
+    }
+
+    // MARK: - Helper Functions
+
     func iconForCategory(_ category: String) -> String {
         switch category {
         case "Football":
             return "sportscourt"
-        case "Natation":
-            return "waveform.path.ecg"
+        case "Swimming":
+            return "figure.pool.swim"
         case "Running":
             return "figure.run"
-        case "Marche":
+        case "Walking":
             return "figure.walk"
-        case "Cyclisme":
+        case "Biking":
             return "bicycle"
+        case "Yoga":
+            return "figure.yoga"
+        case "Pilates":
+            return "figure.pilates"
         default:
             return "questionmark"
         }
     }
 }
 
+// MARK: - IntensityIndicator View
+
 struct IntensityIndicator: View {
-    var intensity: Int
+    
+    // MARK: - Properties
+    
+    var intensity: Int64  // Utilise Int64 pour la cohérence
+
+    // MARK: - Body
     
     var body: some View {
         Circle()
@@ -69,7 +101,9 @@ struct IntensityIndicator: View {
             .frame(width: 10, height: 10)
     }
     
-    func colorForIntensity(_ intensity: Int) -> Color {
+    // MARK: - Helper Functions
+
+    func colorForIntensity(_ intensity: Int64) -> Color {
         switch intensity {
         case 0...3:
             return .green
@@ -82,6 +116,8 @@ struct IntensityIndicator: View {
         }
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ExerciseListView(viewModel: ExerciseListViewModel(context: PersistenceController.preview.container.viewContext))

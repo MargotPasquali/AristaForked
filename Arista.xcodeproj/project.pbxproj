@@ -10,8 +10,8 @@
 		53E587472B235E9000E4EF99 /* AristaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587462B235E9000E4EF99 /* AristaTests.swift */; };
 		53E587512B235E9000E4EF99 /* AristaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587502B235E9000E4EF99 /* AristaUITests.swift */; };
 		53E587532B235E9000E4EF99 /* AristaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587522B235E9000E4EF99 /* AristaUITestsLaunchTests.swift */; };
-		AECDB1CE2CDA5F3F0019DEF3 /* AristaModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECDB1CD2CDA5F3F0019DEF3 /* AristaModels.framework */; };
-		AECDB1CF2CDA5F3F0019DEF3 /* AristaModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AECDB1CD2CDA5F3F0019DEF3 /* AristaModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE28D31F2CDD167D0097A969 /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; };
+		AE28D3202CDD167D0097A969 /* AristaPersistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AECDB1E12CDA61880019DEF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DF2CDA61880019DEF3 /* Preview Assets.xcassets */; };
 		AECDB1E22CDA61880019DEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */; };
 		AECDB1EE2CDA619B0019DEF3 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1EA2CDA619B0019DEF3 /* ExerciseListView.swift */; };
@@ -43,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AECDB1D02CDA5F3F0019DEF3 /* Embed Frameworks */ = {
+		AE28D31E2CDD167B0097A969 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AECDB1CF2CDA5F3F0019DEF3 /* AristaModels.framework in Embed Frameworks */,
+				AE28D3202CDD167D0097A969 /* AristaPersistence.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +63,8 @@
 		53E5874C2B235E9000E4EF99 /* AristaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AristaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E587502B235E9000E4EF99 /* AristaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristaUITests.swift; sourceTree = "<group>"; };
 		53E587522B235E9000E4EF99 /* AristaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AECDB1CD2CDA5F3F0019DEF3 /* AristaModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEABB2B72CDD11F100F3EA8C /* AristaModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECDB1DF2CDA61880019DEF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AECDB1E32CDA619B0019DEF3 /* AristaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristaApp.swift; sourceTree = "<group>"; };
@@ -82,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECDB1CE2CDA5F3F0019DEF3 /* AristaModels.framework in Frameworks */,
+				AE28D31F2CDD167D0097A969 /* AristaPersistence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +111,7 @@
 				AECDB1DA2CDA60D80019DEF3 /* Sources */,
 				53E587452B235E9000E4EF99 /* AristaTests */,
 				53E5874F2B235E9000E4EF99 /* AristaUITests */,
-				AECDB1CC2CDA5F3F0019DEF3 /* Frameworks */,
+				AEABB2B62CDD11F100F3EA8C /* Frameworks */,
 				53E5872E2B235E8F00E4EF99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,10 +143,11 @@
 			path = AristaUITests;
 			sourceTree = "<group>";
 		};
-		AECDB1CC2CDA5F3F0019DEF3 /* Frameworks */ = {
+		AEABB2B62CDD11F100F3EA8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AECDB1CD2CDA5F3F0019DEF3 /* AristaModels.framework */,
+				AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */,
+				AEABB2B72CDD11F100F3EA8C /* AristaModels.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,7 +211,7 @@
 				53E587292B235E8F00E4EF99 /* Sources */,
 				53E5872A2B235E8F00E4EF99 /* Frameworks */,
 				53E5872B2B235E8F00E4EF99 /* Resources */,
-				AECDB1D02CDA5F3F0019DEF3 /* Embed Frameworks */,
+				AE28D31E2CDD167B0097A969 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -501,7 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Arista/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -529,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Arista/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

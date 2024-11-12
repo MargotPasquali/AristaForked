@@ -6,30 +6,36 @@
 //
 
 import Foundation
-
 import CoreData
+import AristaPersistence
 
-class ExerciseListViewModel: ObservableObject {
-    @Published var exercises = [FakeExercise]()
+// MARK: - ExerciseListViewModel
 
+final class ExerciseListViewModel: ObservableObject {
+    
+    // MARK: - Published Properties
+    
+    @Published var exercises = [WorkoutSession]()
+    
+    // MARK: - Core Data Context
+    
     var viewContext: NSManagedObjectContext
 
+    // MARK: - Initializer
+    
     init(context: NSManagedObjectContext) {
         self.viewContext = context
         fetchExercises()
     }
 
-    private func fetchExercises() {
-        // TODO: fetch data in CoreData and replace dumb value below with appropriate information
-        exercises = [FakeExercise(), FakeExercise(), FakeExercise()]
-    }
-}
-
-struct FakeExercise: Identifiable {
-    var id = UUID()
+    // MARK: - Fetching Exercises
     
-    var category: String = "Football"
-    var duration: Int = 120
-    var intensity: Int = 8
-    var date: Date = Date()
+    func fetchExercises() {
+        do {
+            let data = WorkoutSessionRepository(context: viewContext)
+            exercises = try data.getWorkoutSessions()
+        } catch {
+            print("Erreur lors de la récupération des sessions d'entraînement : \(error)")
+        }
+    }
 }

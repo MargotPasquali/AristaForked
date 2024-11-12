@@ -6,28 +6,49 @@
 //
 
 import SwiftUI
+import AristaPersistence
+
+// MARK: - SleepHistoryView
 
 struct SleepHistoryView: View {
+    
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: SleepHistoryViewModel
 
-        var body: some View {
-            List(viewModel.sleepSessions) { session in
-                HStack {
-                    QualityIndicator(quality: session.quality)
-                        .padding()
-                    VStack(alignment: .leading) {
-                        Text("Début : \(session.startDate.formatted())")
-                        Text("Durée : \(session.duration/60) heures")
-                    }
-                }
-            }
-            .navigationTitle("Historique de Sommeil")
+    // MARK: - Body
+    
+    var body: some View {
+        List(viewModel.sleepSessions) { session in
+            sessionRow(for: session)
         }
+        .navigationTitle("Historique de Sommeil")
+    }
+
+    // MARK: - Subviews
+    
+    private func sessionRow(for session: SleepSession) -> some View {
+        HStack {
+            QualityIndicator(quality: session.quality)
+                .padding()
+            VStack(alignment: .leading) {
+                Text("Début : \(session.start.formatted())")
+                Text("Durée : \(session.duration / 60) heures") // Affichage en heures
+            }
+        }
+    }
 }
 
-struct QualityIndicator: View {
-    let quality: Int
+// MARK: - QualityIndicator View
 
+struct QualityIndicator: View {
+    
+    // MARK: - Properties
+    
+    let quality: Int64
+
+    // MARK: - Body
+    
     var body: some View {
         ZStack {
             Circle()
@@ -39,8 +60,10 @@ struct QualityIndicator: View {
         }
     }
 
-    func qualityColor(_ quality: Int) -> Color {
-        switch (10-quality) {
+    // MARK: - Helper Functions
+
+    func qualityColor(_ quality: Int64) -> Color {
+        switch (10 - quality) {
         case 0...3:
             return .green
         case 4...6:
@@ -52,6 +75,8 @@ struct QualityIndicator: View {
         }
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     SleepHistoryView(viewModel: SleepHistoryViewModel(context: PersistenceController.preview.container.viewContext))

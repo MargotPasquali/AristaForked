@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AristaModels/AristaModels.xcodeproj">
+      location = "group:AristaPersistence/AristaPersistence.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Arista.xcodeproj">
