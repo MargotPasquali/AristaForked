@@ -11,7 +11,7 @@ import CoreData
 // MARK: - WorkoutSessionRepository Protocol Definition
 public protocol WorkoutSessionRepositoryProtocol {
     func getWorkoutSessions() throws -> [WorkoutSession]
-    func addNewWorkout(category: String, duration: Int, intensity: Int, start: Date, user: UserEntity) throws
+    func addNewWorkout(category: String, duration: Int, intensity: Int, start: Date, userID: UUID) throws
 }
 
 // MARK: - WorkoutSessionRepository Implementation
@@ -40,26 +40,31 @@ public struct WorkoutSessionRepository: WorkoutSessionRepositoryProtocol {
     }
     
     /// Adds a new workout session to Core Data with a specified category, duration, intensity, and user.
-    public func addNewWorkout(category: String, duration: Int, intensity: Int, start: Date, user: UserEntity) throws {
-        // Validate category
+    public func addNewWorkout(category: String, duration: Int, intensity: Int, start: Date, userID: UUID) throws {
         guard let validCategory = WorkoutSession.Category(rawValue: category) else {
             print("Erreur: La catégorie spécifiée '\(category)' n'est pas valide.")
             return
         }
+
+        // Récupère `UserEntity` en fonction de l'ID
+        let userFetchRequest = UserEntity.fetchRequest()
+        userFetchRequest.predicate = NSPredicate(format: "id == %@", userID as CVarArg)
         
-        // Create and configure a new WorkoutSessionEntity
+        guard let userEntity = try? context.fetch(userFetchRequest).first else {
+            print("Erreur: Aucun utilisateur trouvé pour l'ID \(userID).")
+            return
+        }
+        
+        // Crée un nouvel exercice
         let newWorkout = WorkoutSessionEntity(context: context)
         newWorkout.id = UUID()
         newWorkout.category = validCategory.rawValue
         newWorkout.duration = Int64(duration)
         newWorkout.intensity = Int64(intensity)
         newWorkout.start = start
-        newWorkout.user = user
+        newWorkout.user = userEntity // Associe `UserEntity` récupéré
 
-        // Log pour confirmer que `user` est assigné
-        print("Nouvel exercice créé avec user: \(newWorkout.user?.firstName ?? "aucun")")
-
-        // Save context
         try context.save()
     }
+
 }

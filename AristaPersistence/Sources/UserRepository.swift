@@ -11,7 +11,6 @@ import CoreData
 // MARK: - UserRepository Protocol Definition
 public protocol UserRepositoryProtocol {
     func getUser() -> User?
-    func getUserEntity() -> UserEntity?
 }
 
 // MARK: - UserRepository Implementation
@@ -39,11 +38,4 @@ public struct UserRepository: UserRepositoryProtocol {
         return mapToUser(from: userEntity)  // Converts UserEntity to User
     }
     
-    // Fetches a UserEntity directly from Core Data
-    public func getUserEntity() -> UserEntity? {
-        let request = UserEntity.fetchRequest()
-        request.fetchLimit = 1
-        
-        return try? context.fetch(request).first
-    }
 }

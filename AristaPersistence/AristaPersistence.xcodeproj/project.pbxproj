@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3304BE2CE4E1B40009C6FB /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3304BD2CE4E1B40009C6FB /* UserRepositoryTests.swift */; };
+		AE3304C02CE4E4E10009C6FB /* SleepSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3304BF2CE4E4E10009C6FB /* SleepSessionRepositoryTests.swift */; };
 		AE6135762CE24588001F99E6 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6135752CE24588001F99E6 /* WorkoutSession.swift */; };
 		AE6135772CE24588001F99E6 /* SleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6135732CE24588001F99E6 /* SleepSession.swift */; };
 		AE6135782CE24588001F99E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6135742CE24588001F99E6 /* User.swift */; };
 		AE61357A2CE245A0001F99E6 /* EntitiesTransformationToModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6135792CE245A0001F99E6 /* EntitiesTransformationToModels.swift */; };
-		AE79D5C42CDBB4A000E228FC /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79D5BB2CDBB49F00E228FC /* AristaPersistence.framework */; };
+		AE6C9E9E2CE3A267004B6995 /* WorkoutSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C9E9D2CE3A267004B6995 /* WorkoutSessionRepositoryTests.swift */; };
 		AE79D5D72CDBB50A00E228FC /* Arista.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE79D5D42CDBB50A00E228FC /* Arista.xcdatamodeld */; };
 		AE79D5D82CDBB50A00E228FC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE79D5D52CDBB50A00E228FC /* PersistenceController.swift */; };
 		AE79D5E32CDBB66F00E228FC /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE79D5DF2CDBB65D00E228FC /* UserEntity+CoreDataClass.swift */; };
@@ -26,23 +28,16 @@
 		AEC9FA942CDD03E9005921E7 /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9FA932CDD03E9005921E7 /* DefaultData.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AE79D5C52CDBB4A000E228FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE79D5B22CDBB49F00E228FC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AE79D5BA2CDBB49F00E228FC;
-			remoteInfo = AristaPersistence;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		AE3304BD2CE4E1B40009C6FB /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
+		AE3304BF2CE4E4E10009C6FB /* SleepSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		AE4FED9F2CE23D8500766E2D /* AristaModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4FEDD32CE2409F00766E2D /* AristaMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6135732CE24588001F99E6 /* SleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSession.swift; sourceTree = "<group>"; };
 		AE6135742CE24588001F99E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AE6135752CE24588001F99E6 /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		AE6135792CE245A0001F99E6 /* EntitiesTransformationToModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesTransformationToModels.swift; sourceTree = "<group>"; };
+		AE6C9E9D2CE3A267004B6995 /* WorkoutSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		AE79D5BB2CDBB49F00E228FC /* AristaPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AristaPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE79D5C32CDBB4A000E228FC /* AristaPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AristaPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE79D5D52CDBB50A00E228FC /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -72,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE79D5C42CDBB4A000E228FC /* AristaPersistence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,14 +83,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AE6C9E9C2CE3A222004B6995 /* AristaPersistenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE6C9E9D2CE3A267004B6995 /* WorkoutSessionRepositoryTests.swift */,
+				AE3304BD2CE4E1B40009C6FB /* UserRepositoryTests.swift */,
+				AE3304BF2CE4E4E10009C6FB /* SleepSessionRepositoryTests.swift */,
+			);
+			path = AristaPersistenceTests;
+			sourceTree = "<group>";
+		};
 		AE79D5B12CDBB49F00E228FC = {
 			isa = PBXGroup;
 			children = (
+				AE6C9E9C2CE3A222004B6995 /* AristaPersistenceTests */,
+				AE9FED882CDD124600793161 /* Frameworks */,
+				AE79D5D52CDBB50A00E228FC /* PersistenceController.swift */,
+				AE79D5BC2CDBB49F00E228FC /* Products */,
 				AE79D5DB2CDBB52F00E228FC /* Resources */,
 				AE79D5DA2CDBB52700E228FC /* Sources */,
-				AE79D5D52CDBB50A00E228FC /* PersistenceController.swift */,
-				AE9FED882CDD124600793161 /* Frameworks */,
-				AE79D5BC2CDBB49F00E228FC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,7 +203,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE79D5C62CDBB4A000E228FC /* PBXTargetDependency */,
 			);
 			name = AristaPersistenceTests;
 			packageProductDependencies = (
@@ -223,6 +227,7 @@
 					};
 					AE79D5C22CDBB4A000E228FC = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 					};
 				};
 			};
@@ -291,18 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3304C02CE4E4E10009C6FB /* SleepSessionRepositoryTests.swift in Sources */,
+				AE3304BE2CE4E1B40009C6FB /* UserRepositoryTests.swift in Sources */,
+				AE6C9E9E2CE3A267004B6995 /* WorkoutSessionRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AE79D5C62CDBB4A000E228FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AE79D5BA2CDBB49F00E228FC /* AristaPersistence */;
-			targetProxy = AE79D5C52CDBB4A000E228FC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AE79D5CD2CDBB4A000E228FC /* Debug */ = {
@@ -502,6 +502,7 @@
 		AE79D5D22CDBB4A000E228FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FQJ5XK4959;
@@ -510,6 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.AristaPersistenceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,6 +520,7 @@
 		AE79D5D32CDBB4A000E228FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FQJ5XK4959;

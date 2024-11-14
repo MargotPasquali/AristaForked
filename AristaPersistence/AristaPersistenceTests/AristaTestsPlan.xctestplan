@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "68462309-BE19-4D53-936B-44B9B2ADAE10",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:AristaPersistence.xcodeproj",
+        "identifier" : "AE79D5C22CDBB4A000E228FC",
+        "name" : "AristaPersistenceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Arista.xcodeproj",
+        "identifier" : "AE3304C42CE4E5EE0009C6FB",
+        "name" : "AristaTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -34,31 +34,32 @@ public struct PersistenceController {
     // MARK: - Initializer
     
     public init(inMemory: Bool = false) {
-        // Charge le modèle Core Data depuis le framework
-        guard let modelURL = Bundle(identifier: "com.openclassrooms.AristaPersistence")?.url(forResource: "Arista", withExtension: "momd"),
-              let model = NSManagedObjectModel(contentsOf: modelURL) else {
-            fatalError("Impossible de charger le modèle de données depuis le framework.")
-        }
-        
-        // Initialise le container avec le modèle chargé manuellement
-        container = NSPersistentContainer(name: "Arista", managedObjectModel: model)
-        
-        if inMemory {
-            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        }
-        
-        container.loadPersistentStores { storeDescription, error in
-            if let error = error as NSError? {
-                print("Unresolved error \(error), \(error.userInfo)")
+            // Charge le modèle Core Data depuis le framework
+            guard let modelURL = Bundle(identifier: "com.openclassrooms.AristaPersistence")?.url(forResource: "Arista", withExtension: "momd"),
+                  let model = NSManagedObjectModel(contentsOf: modelURL) else {
+                fatalError("Impossible de charger le modèle de données depuis le framework.")
+            }
+            
+            // Initialise le container avec le modèle chargé manuellement
+            container = NSPersistentContainer(name: "Arista", managedObjectModel: model)
+            
+            if inMemory {
+                container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+            }
+            
+            container.loadPersistentStores { storeDescription, error in
+                if let error = error as NSError? {
+                    print("Unresolved error \(error), \(error.userInfo)")
+                }
+            }
+            
+            container.viewContext.automaticallyMergesChangesFromParent = true
+            
+            // Applique les données par défaut si `inMemory` est `false`
+            if !inMemory {
+                applyDefaultData()
             }
         }
-        
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        
-        // MARK: Apply Default Data
-        
-        applyDefaultData()
-    }
     
     // MARK: - Private Helper Methods
     

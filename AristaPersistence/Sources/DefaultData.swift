@@ -32,10 +32,11 @@ struct DefaultData: DefaultDataProtocol {
         let sleepSessionRepository = SleepSessionRepository(context: context)
         
         // MARK: Check for Existing User
-        if (try? userRepository.getUser()) == nil {
+        if userRepository.getUser() == nil {
             let initialUser = createInitialUser()
             
             // MARK: Add Default Sleep Sessions
+            // Ajoutez `try` ici car `getSleepSessions()` est "throwing"
             if try sleepSessionRepository.getSleepSessions().isEmpty {
                 addDefaultSleepSessions(for: initialUser)
             }
@@ -44,11 +45,12 @@ struct DefaultData: DefaultDataProtocol {
             addDefaultWorkoutSessions(for: initialUser)
             
             // MARK: Save Context
-            try saveContext()
+            try saveContext() // `saveContext()` est "throwing"
         } else {
             print("Utilisateur par défaut déjà existant")
         }
     }
+
     
     // MARK: - Private Helper Methods
     

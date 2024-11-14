@@ -49,38 +49,38 @@ final class AddExerciseViewModel: ObservableObject {
 //    }
     // MARK: - Public Methods
         
-        func addExercise(onExerciseAdded: () -> Void) -> Bool {
-            guard let currentUser = getCurrentUser() else {
-                print("Aucun utilisateur disponible pour l'exercice.")
-                return false
-            }
-
-            let repository = WorkoutSessionRepository(context: viewContext)
-            do {
-                try repository.addNewWorkout(
-                    category: category,
-                    duration: Int(duration),
-                    intensity: Int(intensity),
-                    start: start,
-                    user: currentUser
-                )
-                onExerciseAdded()
-                return true
-            } catch {
-                print("Erreur lors de l'ajout de l'exercice : \(error)")
-                return false
-            }
+    func addExercise(onExerciseAdded: () -> Void) -> Bool {
+        // Utilise `getCurrentUser` pour obtenir un `User`
+        guard let currentUser = getCurrentUser() else {
+            print("Aucun utilisateur disponible pour l'exercice.")
+            return false
         }
+
+        let repository = WorkoutSessionRepository(context: viewContext)
+
+        do {
+            // Utilise l'ID de `User` pour ajouter un exercice
+            try repository.addNewWorkout(
+                category: category,
+                duration: Int(duration),
+                intensity: Int(intensity),
+                start: start,
+                userID: currentUser.id // Utilise l'ID de `User`
+            )
+            onExerciseAdded()
+            return true
+        } catch {
+            print("Erreur lors de l'ajout de l'exercice : \(error)")
+            return false
+        }
+    }
+
 
         // MARK: - Private Methods
         
-        private func getCurrentUser() -> UserEntity? {
-            let userRepository = UserRepository(context: viewContext)
-            if let userEntity = userRepository.getUserEntity() {
-                return userEntity
-            } else {
-                print("Aucun utilisateur trouvé.")
-                return nil
-            }
-        }
+    private func getCurrentUser() -> User? {
+        let userRepository = UserRepository(context: viewContext)
+        return userRepository.getUser()
+    }
+
     }
