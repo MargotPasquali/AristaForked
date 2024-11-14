@@ -11,7 +11,7 @@ import Foundation
 public struct WorkoutSession: Identifiable {
 
     // MARK: - Category Enum
-    public enum Category: String {
+    public enum Category: String, CaseIterable {
         case fitness = "Fitness"
         case swimming = "Swimming"
         case running = "Running"

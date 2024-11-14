@@ -25,14 +25,34 @@ struct AddExerciseView: View {
             VStack {
                 // MARK: Form Section
                 Form {
-                    TextField("Catégorie", text: $viewModel.category)
+                    Section(header: Text("Quel type d'exercice ? ")) {
+                        Picker("Catégorie", selection: $viewModel.category) {
+                            ForEach(WorkoutSession.Category.allCases, id: \.rawValue) { category in
+                                Text(category.rawValue).tag(category)
+                            }
+                        }
+                    }
+                    Section(header: Text("Détails")) {
+                        HStack {
+                            Text("Durée (en minutes)")
+                            Spacer()
+                            TextField("15", value: $viewModel.duration, formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
+                                .multilineTextAlignment(.trailing)
+                        }
+                        HStack {
+                            Text("Intensité (0 à 10)")
+                            Spacer()
+                            TextField("7", value: $viewModel.intensity, formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
+                                .multilineTextAlignment(.trailing)
+                        }
+                    }
+                    
                     DatePicker("Heure de démarrage", selection: $viewModel.start, displayedComponents: [.date, .hourAndMinute])
-                    TextField("Durée (en minutes)", value: $viewModel.duration, formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
-                    TextField("Intensité (0 à 10)", value: $viewModel.intensity, formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
                 }
                 .formStyle(.grouped)
+                
                 
                 Spacer()
                 

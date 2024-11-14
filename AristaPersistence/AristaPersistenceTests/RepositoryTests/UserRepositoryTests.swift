@@ -12,6 +12,24 @@ import CoreData
 
 final class UserRepositoryTests: XCTestCase {
 
+    // MARK: - Properties
+    private var persistenceController: PersistenceController!
+    private var context: NSManagedObjectContext!
+    
+    // MARK: - Setup and Teardown
+    override func setUp() {
+        super.setUp()
+        persistenceController = PersistenceController(inMemory: true)
+        context = persistenceController.container.viewContext
+    }
+
+    override func tearDown() {
+        emptyEntities(context: context)
+        persistenceController = nil
+        context = nil
+        super.tearDown()
+    }
+    
     // MARK: - Helper Methods
     private func emptyEntities(context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
@@ -35,24 +53,21 @@ final class UserRepositoryTests: XCTestCase {
     }
     
     // MARK: - Tests
-    
     func test_WhenNoUserIsInDatabase_GetUser_ReturnsNil() {
-        let persistenceController = PersistenceController(inMemory: true)
-        let repository = UserRepository(context: persistenceController.container.viewContext)
+        let repository = UserRepository(context: context)
         let user = repository.getUser()
         
         XCTAssertNil(user)
     }
 
     func test_WhenAddingOneUserInDatabase_GetUser_ReturnsTheUser() {
-        let persistenceController = PersistenceController(inMemory: true)
         let firstName = "John"
         let lastName = "Doe"
         let passwordHash = "secureHash"
 
-        addUser(context: persistenceController.container.viewContext, firstName: firstName, lastName: lastName, passwordHash: passwordHash)
+        addUser(context: context, firstName: firstName, lastName: lastName, passwordHash: passwordHash)
         
-        let repository = UserRepository(context: persistenceController.container.viewContext)
+        let repository = UserRepository(context: context)
         let user = repository.getUser()
         
         XCTAssertNotNil(user)
@@ -62,13 +77,11 @@ final class UserRepositoryTests: XCTestCase {
     }
 
     func test_WhenAddingMultipleUsersInDatabase_GetUser_ReturnsTheFirstUser() {
-        let persistenceController = PersistenceController(inMemory: true)
-
         // Ajoute plusieurs utilisateurs
-        addUser(context: persistenceController.container.viewContext, firstName: "Alice", lastName: "Smith", passwordHash: "hash1")
-        addUser(context: persistenceController.container.viewContext, firstName: "Bob", lastName: "Johnson", passwordHash: "hash2")
+        addUser(context: context, firstName: "Alice", lastName: "Smith", passwordHash: "hash1")
+        addUser(context: context, firstName: "Bob", lastName: "Johnson", passwordHash: "hash2")
         
-        let repository = UserRepository(context: persistenceController.container.viewContext)
+        let repository = UserRepository(context: context)
         let user = repository.getUser()
         
         // Vérifie que le premier utilisateur est retourné

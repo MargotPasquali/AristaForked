@@ -10,7 +10,6 @@
 		AE28D31F2CDD167D0097A969 /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; };
 		AE28D3202CDD167D0097A969 /* AristaPersistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE3304D72CE4F32D0009C6FB /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3304D62CE4F32D0009C6FB /* AristaPersistence.framework */; };
-		AE3304D82CE4F32D0009C6FB /* AristaPersistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE3304D62CE4F32D0009C6FB /* AristaPersistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AECDB1E12CDA61880019DEF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DF2CDA61880019DEF3 /* Preview Assets.xcassets */; };
 		AECDB1E22CDA61880019DEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */; };
 		AECDB1EE2CDA619B0019DEF3 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1EA2CDA619B0019DEF3 /* ExerciseListView.swift */; };
@@ -42,17 +41,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				AE28D3202CDD167D0097A969 /* AristaPersistence.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE3304D92CE4F32D0009C6FB /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				AE3304D82CE4F32D0009C6FB /* AristaPersistence.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +197,6 @@
 				AE3304C12CE4E5EE0009C6FB /* Sources */,
 				AE3304C22CE4E5EE0009C6FB /* Frameworks */,
 				AE3304C32CE4E5EE0009C6FB /* Resources */,
-				AE3304D92CE4F32D0009C6FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,7 +440,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,7 +469,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

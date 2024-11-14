@@ -13,15 +13,17 @@
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
-        "containerPath" : "container:AristaPersistence.xcodeproj",
+        "containerPath" : "container:AristaPersistence\/AristaPersistence.xcodeproj",
         "identifier" : "AE79D5C22CDBB4A000E228FC",
         "name" : "AristaPersistenceTests"
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
-        "containerPath" : "container:..\/Arista.xcodeproj",
+        "containerPath" : "container:Arista.xcodeproj",
         "identifier" : "AE3304C42CE4E5EE0009C6FB",
         "name" : "AristaTests"
       }

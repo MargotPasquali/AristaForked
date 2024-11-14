@@ -14,32 +14,33 @@ import Combine
 
 final class ExerciseListViewModelTests: XCTestCase {
     
+    private var persistenceController: PersistenceController!
+    private var context: NSManagedObjectContext!
+    
     var cancellables = Set<AnyCancellable>()
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
+    override func setUp() {
+        persistenceController = PersistenceController(inMemory: true)
+        context = persistenceController.container.viewContext
     }
-    override func tearDownWithError() throws {
-        
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
+    
+    override func tearDown() {
+        emptyEntities(context: context)
+        persistenceController = nil
+        context = nil
     }
     
     private func emptyEntities(context: NSManagedObjectContext) {
-        
         let fetchRequest = WorkoutSessionEntity.fetchRequest()
-        
         let objects = try! context.fetch(fetchRequest)
         
-        for exercice in objects {
-            context.delete(exercice)
+        for exercise in objects {
+            context.delete(exercise)
         }
         try! context.save()
-        
     }
-    
-    private func addExercice(context: NSManagedObjectContext, category: String, duration: Int, intensity: Int, startDate: Date, userFirstName: String, userLastName: String) {
+
+    private func addExercice(category: String, duration: Int, intensity: Int, startDate: Date, userFirstName: String, userLastName: String) {
         
         let newUser = UserEntity(context: context)
         newUser.firstName = userFirstName
@@ -56,7 +57,7 @@ final class ExerciseListViewModelTests: XCTestCase {
         newExercise.intensity = Int64(intensity)
         newExercise.start = startDate
         newExercise.user = newUser
-        newUser.id = UUID()
+        newExercise.id = UUID()
         
         try! context.save()
         
@@ -65,9 +66,7 @@ final class ExerciseListViewModelTests: XCTestCase {
     func test_WhenNoExerciseIsInDatabase_FetchExercise_ReturnEmptyList() {
         
         // Clean manually all data
-        let persistenceController = PersistenceController(inMemory: true)
-        emptyEntities(context: persistenceController.container.viewContext)
-        let viewModel = ExerciseListViewModel(context: persistenceController.container.viewContext)
+        let viewModel = ExerciseListViewModel(context: context)
         let expectation = XCTestExpectation(description: "fetch empty list of exercise")
         
         viewModel.$exercises
@@ -87,17 +86,11 @@ final class ExerciseListViewModelTests: XCTestCase {
         
         // Clean manually all data
         
-        let persistenceController = PersistenceController(inMemory: true)
-        
-        emptyEntities(context: persistenceController.container.viewContext)
-        
         let date = Date()
         
-        addExercice(context: persistenceController.container.viewContext,
-                    
-                    category: "Football", duration: 10, intensity: 5, startDate: date, userFirstName: "Eric", userLastName: "Marcus")
+        addExercice(category: "Football", duration: 10, intensity: 5, startDate: date, userFirstName: "Eric", userLastName: "Marcus")
         
-        let viewModel = ExerciseListViewModel(context: persistenceController.container.viewContext)
+        let viewModel = ExerciseListViewModel(context: context)
         
         let expectation = XCTestExpectation(description: "fetch empty list of exercise")
         
@@ -124,14 +117,12 @@ final class ExerciseListViewModelTests: XCTestCase {
     func test_WhenAddingMultipleExerciseInDatabase_FetchExercise_ReturnAListContainingTheExerciseInTheRightOrder() {
         
         // Clean manually all data
-        let persistenceController = PersistenceController(inMemory: true)
-        emptyEntities(context: persistenceController.container.viewContext)
         
         let date1 = Date()
         let date2 = Date(timeIntervalSinceNow: -(60*60*24))
         let date3 = Date(timeIntervalSinceNow: -(60*60*24*2))
         
-        addExercice(context: persistenceController.container.viewContext,
+        addExercice(
                     category: "Football",
                     duration: 10,
                     intensity: 5,
@@ -139,8 +130,7 @@ final class ExerciseListViewModelTests: XCTestCase {
                     userFirstName: "Ericn",
                     userLastName: "Marcusi")
         
-        addExercice(context: persistenceController.container.viewContext,
-                    
+        addExercice(
                     category: "Running",
                     duration: 120,
                     intensity: 1,
@@ -148,8 +138,7 @@ final class ExerciseListViewModelTests: XCTestCase {
                     userFirstName: "Ericb",
                     userLastName: "Marceau")
         
-        addExercice(context: persistenceController.container.viewContext,
-                    
+        addExercice(
                     category: "Fitness",
                     duration: 30,
                     intensity: 5,
@@ -157,7 +146,7 @@ final class ExerciseListViewModelTests: XCTestCase {
                     userFirstName: "Frédericp",
                     userLastName: "Marcus")
         
-        let viewModel = ExerciseListViewModel(context: persistenceController.container.viewContext)
+        let viewModel = ExerciseListViewModel(context: context)
         
         let expectation = XCTestExpectation(description: "fetch exercises in correct order")
         

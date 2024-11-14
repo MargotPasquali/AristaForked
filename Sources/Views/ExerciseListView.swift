@@ -65,6 +65,8 @@ struct ExerciseListView: View {
 
     func iconForCategory(_ category: String) -> String {
         switch category {
+        case "Fitness":
+            return "figure.mixed.cardio"
         case "Football":
             return "sportscourt"
         case "Swimming":
