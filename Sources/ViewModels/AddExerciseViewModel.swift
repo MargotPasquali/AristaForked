@@ -13,12 +13,32 @@ import AristaPersistence
 
 final class AddExerciseViewModel: ObservableObject {
     
+    // MARK: - Enums
+
+    enum AddExerciseViewModelError: Error {
+        case NewWorkoutNotValid
+        case NoUserAvailable
+        case SavingError
+        
+        var localizedDescription: String {
+            switch self {
+            case .NewWorkoutNotValid:
+                return "L'exercice n'est pas valide."
+            case .NoUserAvailable:
+                return "Au moins un utilisateur doit être connecté."
+            case .SavingError:
+                return "Erreur de sauvegarde de l'exercice. Veuillez réessayer."
+            }
+        }
+    }
+    
     // MARK: - Published Properties
     
     @Published var category: WorkoutSession.Category
     @Published var start: Date = Date()
     @Published var duration: Int64 = 0
     @Published var intensity: Int64 = 0
+    @Published var errorMessage: String?
 
     // MARK: - Private Properties
     
@@ -32,9 +52,20 @@ final class AddExerciseViewModel: ObservableObject {
     }
     
     // MARK: - Public Methods
+    
+    func isNewWorkoutValid() -> Bool {
+        let now = Date()
+        return duration > 0 && intensity > 0 && start <= now
+    }
+
     func addExercise(onExerciseAdded: () -> Void) -> Bool {
+        guard isNewWorkoutValid() else {
+            errorMessage = AddExerciseViewModelError.NewWorkoutNotValid.localizedDescription
+            return false
+        }
+        
         guard let currentUser = getCurrentUser() else {
-            print("Aucun utilisateur disponible pour l'exercice.")
+            errorMessage = AddExerciseViewModelError.NoUserAvailable.localizedDescription
             return false
         }
 
@@ -51,7 +82,7 @@ final class AddExerciseViewModel: ObservableObject {
             onExerciseAdded()
             return true
         } catch {
-            print("Erreur lors de l'ajout de l'exercice : \(error)")
+            errorMessage = AddExerciseViewModelError.SavingError.localizedDescription
             return false
         }
     }

@@ -13,9 +13,23 @@ import AristaPersistence
 
 final class SleepHistoryViewModel: ObservableObject {
     
+    // MARK: - Enums
+    
+    enum SleepHistoryViewModelError: Error {
+        case fetchingSleepSessionsError
+        
+        var localizedDescription: String {
+            switch self {
+            case .fetchingSleepSessionsError:
+                return "Erreur lors de la récupération des sessions de sommeil."
+            }
+        }
+    }
+    
     // MARK: - Published Properties
     
     @Published var sleepSessions = [SleepSession]()
+    @Published var errorMessage: String?
     
     // MARK: - Core Data Context
     
@@ -35,16 +49,7 @@ final class SleepHistoryViewModel: ObservableObject {
             let repository = SleepSessionRepository(context: viewContext)
             sleepSessions = try repository.getSleepSessions()
         } catch {
-            print("Erreur lors de la récupération des sessions de sommeil: \(error.localizedDescription)")
+            errorMessage = SleepHistoryViewModelError.fetchingSleepSessionsError.localizedDescription
         }
-    }
-    
-    // MARK: - Fake Data for Preview
-
-    struct FakeSleepSession: Identifiable {
-        var id = UUID()
-        var startDate: Date = Date()
-        var duration: Int = 695
-        var quality: Int = (0...10).randomElement()!
     }
 }

@@ -44,7 +44,8 @@ struct AristaApp: App {
                     .tabItem {
                         Label("Sommeil", systemImage: "moon")
                     }
-            }
+            }.accentColor(Color(hex: "#BC1C20"))
+
         }
     }
 }

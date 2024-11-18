@@ -10,6 +10,7 @@
 		AE28D31F2CDD167D0097A969 /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; };
 		AE28D3202CDD167D0097A969 /* AristaPersistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE3304D72CE4F32D0009C6FB /* AristaPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3304D62CE4F32D0009C6FB /* AristaPersistence.framework */; };
+		AECC25E22CEB810600307FDD /* Outfit-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AECC25E12CEB810600307FDD /* Outfit-VariableFont_wght.ttf */; };
 		AECDB1E12CDA61880019DEF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DF2CDA61880019DEF3 /* Preview Assets.xcassets */; };
 		AECDB1E22CDA61880019DEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */; };
 		AECDB1EE2CDA619B0019DEF3 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1EA2CDA619B0019DEF3 /* ExerciseListView.swift */; };
@@ -21,6 +22,7 @@
 		AECDB1F42CDA619B0019DEF3 /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1E52CDA619B0019DEF3 /* ExerciseListViewModel.swift */; };
 		AECDB1F52CDA619B0019DEF3 /* AddExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1E42CDA619B0019DEF3 /* AddExerciseViewModel.swift */; };
 		AECDB1F62CDA619B0019DEF3 /* SleepHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDB1E62CDA619B0019DEF3 /* SleepHistoryViewModel.swift */; };
+		AEF51AA12CEB7E7A00857B20 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF51AA02CEB7E7A00857B20 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		AE3304D62CE4F32D0009C6FB /* AristaPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEABB2B72CDD11F100F3EA8C /* AristaModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEABB2BA2CDD11F300F3EA8C /* AristaPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AristaPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECC25E12CEB810600307FDD /* Outfit-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		AECC25E32CEB812900307FDD /* Arista-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Arista-Info.plist"; sourceTree = "<group>"; };
 		AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECDB1DF2CDA61880019DEF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AECDB1E32CDA619B0019DEF3 /* AristaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristaApp.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		AECDB1EA2CDA619B0019DEF3 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		AECDB1EB2CDA619B0019DEF3 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
 		AECDB1EC2CDA619B0019DEF3 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
+		AEF51AA02CEB7E7A00857B20 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -93,6 +98,7 @@
 		53E587242B235E8F00E4EF99 = {
 			isa = PBXGroup;
 			children = (
+				AECC25E32CEB812900307FDD /* Arista-Info.plist */,
 				AE3304C62CE4E5EE0009C6FB /* AristaTests */,
 				AEABB2B62CDD11F100F3EA8C /* Frameworks */,
 				53E5872E2B235E8F00E4EF99 /* Products */,
@@ -120,6 +126,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AECC25E02CEB80D200307FDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AECC25E12CEB810600307FDD /* Outfit-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		AECDB1DA2CDA60D80019DEF3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +147,10 @@
 		AECDB1DB2CDA60E30019DEF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AECC25E02CEB80D200307FDD /* Fonts */,
 				AECDB1DE2CDA61880019DEF3 /* Assets.xcassets */,
 				AECDB1E02CDA61880019DEF3 /* Preview Content */,
+				AEF51AA02CEB7E7A00857B20 /* Color+Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECC25E22CEB810600307FDD /* Outfit-VariableFont_wght.ttf in Resources */,
 				AECDB1E12CDA61880019DEF3 /* Preview Assets.xcassets in Resources */,
 				AECDB1E22CDA61880019DEF3 /* Assets.xcassets in Resources */,
 			);
@@ -281,6 +298,7 @@
 				AECDB1F02CDA619B0019DEF3 /* UserDataView.swift in Sources */,
 				AECDB1F12CDA619B0019DEF3 /* AddExerciseView.swift in Sources */,
 				AECDB1F22CDA619B0019DEF3 /* AristaApp.swift in Sources */,
+				AEF51AA12CEB7E7A00857B20 /* Color+Extensions.swift in Sources */,
 				AECDB1F32CDA619B0019DEF3 /* SleepHistoryView.swift in Sources */,
 				AECDB1F42CDA619B0019DEF3 /* ExerciseListViewModel.swift in Sources */,
 				AECDB1F52CDA619B0019DEF3 /* AddExerciseViewModel.swift in Sources */,
@@ -435,6 +453,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Arista-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +483,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Arista-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

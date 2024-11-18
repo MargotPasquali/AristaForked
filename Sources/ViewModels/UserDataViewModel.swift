@@ -13,10 +13,27 @@ import AristaPersistence
 
 final class UserDataViewModel: ObservableObject {
     
+    // MARK: - Enums
+
+    enum UserDataViewModelError: Error {
+        case userNotFound
+        case fetchingUserFailed
+        
+        var localizedDescription: String {
+            switch self {
+            case .userNotFound:
+                return "Aucun utilisateur trouvé."
+            case .fetchingUserFailed:
+                return "Erreur lors de la récupération des données de l'utilisateur."
+            }
+        }
+    }
+    
     // MARK: - Published Properties
     
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var errorMessage : String?
     
     // MARK: - Core Data Context
     
@@ -39,12 +56,12 @@ final class UserDataViewModel: ObservableObject {
                 firstName = user.firstName
                 lastName = user.lastName
             } else {
-                print("User not found. Utilisation des valeurs par défaut.")
+                errorMessage = UserDataViewModelError.userNotFound.localizedDescription
                 firstName = "Invité"
                 lastName = "Utilisateur"
             }
         } catch {
-            print("Erreur lors de la récupération des données utilisateur : \(error)")
+            errorMessage = UserDataViewModelError.fetchingUserFailed.localizedDescription
         }
     }
 }

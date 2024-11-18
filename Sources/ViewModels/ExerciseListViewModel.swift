@@ -12,10 +12,23 @@ import AristaPersistence
 // MARK: - ExerciseListViewModel
 
 final class ExerciseListViewModel: ObservableObject {
+    // MARK: - Enums
+
+    enum ExciseListViewModelError: Error {
+        case fetchingExercisesError
+        
+    var localizedDescription: String {
+            switch self {
+            case .fetchingExercisesError:
+                return "Erreur lors de la récupération des sessions d'entraînement."
+            }
+        }
+    }
     
     // MARK: - Published Properties
     
     @Published var exercises = [WorkoutSession]()
+    @Published var errorMessage: String?
     
     // MARK: - Core Data Context
     
@@ -35,7 +48,7 @@ final class ExerciseListViewModel: ObservableObject {
             let data = WorkoutSessionRepository(context: viewContext)
             exercises = try data.getWorkoutSessions()
         } catch {
-            print("Erreur lors de la récupération des sessions d'entraînement : \(error)")
+            errorMessage = ExciseListViewModelError.fetchingExercisesError.localizedDescription
         }
     }
 }

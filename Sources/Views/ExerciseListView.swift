@@ -16,15 +16,31 @@ struct ExerciseListView: View {
     
     @ObservedObject var viewModel: ExerciseListViewModel
     @State private var showingAddExerciseView = false
-
+    
     // MARK: - Body
     
     var body: some View {
         NavigationView {
             List(viewModel.exercises) { exercise in
                 exerciseRow(for: exercise)
+                    .listRowBackground(Color(hex: "#FFF9EC"))
+                    .listRowSeparator(.hidden)
+                
+                
             }
-            .navigationTitle("Exercices")
+            .listStyle(PlainListStyle())
+            .scrollContentBackground(.hidden)
+            .background(Color(hex: "#FFF9EC")
+                .ignoresSafeArea())
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Exercices")
+                        .font(Font.custom("Outfit", size: 25))
+                        .font(.largeTitle)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(hex: "#BC1C20"))
+                }
+            }
             .navigationBarItems(trailing: addExerciseButton)
             .sheet(isPresented: $showingAddExerciseView) {
                 AddExerciseView(
@@ -33,10 +49,12 @@ struct ExerciseListView: View {
                     }
             }
         }
+
     }
-
+    
+    
     // MARK: - Subviews
-
+    
     private func exerciseRow(for exercise: WorkoutSession) -> some View {
         HStack {
             Image(systemName: iconForCategory(exercise.category.rawValue))
@@ -60,9 +78,9 @@ struct ExerciseListView: View {
             Image(systemName: "plus")
         }
     }
-
+    
     // MARK: - Helper Functions
-
+    
     func iconForCategory(_ category: String) -> String {
         switch category {
         case "Fitness":
@@ -94,7 +112,7 @@ struct IntensityIndicator: View {
     // MARK: - Properties
     
     var intensity: Int64  // Utilise Int64 pour la cohérence
-
+    
     // MARK: - Body
     
     var body: some View {
@@ -104,7 +122,7 @@ struct IntensityIndicator: View {
     }
     
     // MARK: - Helper Functions
-
+    
     func colorForIntensity(_ intensity: Int64) -> Color {
         switch intensity {
         case 0...3:

@@ -19,25 +19,40 @@ struct SleepHistoryView: View {
     // MARK: - Body
     
     var body: some View {
-        List(viewModel.sleepSessions) { session in
-            sessionRow(for: session)
-        }
-        .navigationTitle("Historique de Sommeil")
-    }
+          NavigationStack {
+              List(viewModel.sleepSessions) { session in
+                  sessionRow(for: session)
+                      .listRowBackground(Color(hex: "#FFF9EC"))
+                      .listRowSeparator(.hidden)
+              }
+              .listStyle(PlainListStyle())
+              .scrollContentBackground(.hidden)
+              .background(Color(hex: "#FFF9EC")
+                  .ignoresSafeArea())
+              .toolbar {
+                  ToolbarItem(placement: .topBarLeading) { // Centrer le texte
+                      Text("Historique de sommeil")
+                          .font(Font.custom("Outfit", size: 25))
+                          .fontWeight(.medium)
+                          .foregroundColor(Color(hex: "#BC1C20"))
+                  }
+              }
+          }
+      }
 
     // MARK: - Subviews
     
     private func sessionRow(for session: SleepSession) -> some View {
-        HStack {
-            QualityIndicator(quality: session.quality)
-                .padding()
-            VStack(alignment: .leading) {
-                Text("Début : \(session.start.formatted())")
-                Text("Durée : \(session.duration / 60) heures") // Affichage en heures
+            HStack {
+                QualityIndicator(quality: session.quality)
+                    .padding()
+                VStack(alignment: .leading) {
+                    Text("Début : \(session.start.formatted())")
+                    Text("Durée : \(session.duration / 60) heures")
+                }
             }
         }
     }
-}
 
 // MARK: - QualityIndicator View
 
