@@ -15,20 +15,20 @@ struct UserDataView: View {
     
     var body: some View {
         ZStack {
-            Color(hex: "#FFF9EC")
+            Color("Beige")
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
                 Spacer()
                 Text("Bonjour")
                     .font(Font.custom("Outfit", size: 40))
-                    .foregroundColor(Color(hex: "#C8A095"))
+                    .foregroundColor(Color("Brown"))
                     .font(.largeTitle)
                     .multilineTextAlignment(.leading)
                 Text("\(viewModel.firstName) \(viewModel.lastName)")
                     .font(Font.custom("Outfit", size: 35))
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(hex: "#BC1C20"))
+                    .foregroundColor(Color("Red"))
                     .padding()
                     .scaleEffect(1.2)
                     .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: UUID())

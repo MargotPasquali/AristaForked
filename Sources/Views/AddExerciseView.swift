@@ -20,12 +20,12 @@ struct AddExerciseView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(hex: "#FFF9EC")
+                Color("Beige")
                     .ignoresSafeArea()
                 
                 VStack {
                     ZStack {
-                        Color(hex: "#FFF9EC")
+                        Color("Beige")
                         Form {
                             Section(header: Text("Quel type d'exercice ? ")) {
                                 Picker("Catégorie", selection: $viewModel.category) {
@@ -46,10 +46,20 @@ struct AddExerciseView: View {
                                 HStack {
                                     Text("Intensité (0 à 10)")
                                     Spacer()
-                                    TextField("7", value: $viewModel.intensity, formatter: NumberFormatter())
-                                        .keyboardType(.numberPad)
-                                        .multilineTextAlignment(.trailing)
+                                    Slider(
+                                        value: Binding(
+                                            get: { Double(viewModel.intensity) },
+                                            set: { viewModel.intensity = Int64(Int($0)) }
+                                        ),
+                                        in: 0...10,
+                                        step: 1
+                                    )
+                                    .accentColor(Color("Red"))
+                                    .padding(.horizontal)
+                                    Text("\(viewModel.intensity)")
+                                        .frame(width: 30, alignment: .trailing)
                                 }
+                                
                             }.listRowBackground(Color(hex: "#FFFFFF"))
                             Section {
                                 DatePicker("Heure de démarrage", selection: $viewModel.start, displayedComponents: [.date, .hourAndMinute])
@@ -73,7 +83,7 @@ struct AddExerciseView: View {
                     .font(Font.custom("Outfit", size: 25))
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(hex: "#BC1C20"))
+                    .foregroundColor(Color("Red"))
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.white)
@@ -85,7 +95,7 @@ struct AddExerciseView: View {
                         .font(Font.custom("Outfit", size: 30))
                         .font(.largeTitle)
                         .fontWeight(.medium)
-                        .foregroundColor(Color(hex: "#BC1C20"))
+                        .foregroundColor(Color("Red"))
                         .padding(.top, 22.0)
                 }
             }

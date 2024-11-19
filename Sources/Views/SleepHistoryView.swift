@@ -22,19 +22,19 @@ struct SleepHistoryView: View {
           NavigationStack {
               List(viewModel.sleepSessions) { session in
                   sessionRow(for: session)
-                      .listRowBackground(Color(hex: "#FFF9EC"))
+                      .listRowBackground(Color("Beige"))
                       .listRowSeparator(.hidden)
               }
               .listStyle(PlainListStyle())
               .scrollContentBackground(.hidden)
-              .background(Color(hex: "#FFF9EC")
+              .background(Color("Beige")
                   .ignoresSafeArea())
               .toolbar {
                   ToolbarItem(placement: .topBarLeading) { // Centrer le texte
                       Text("Historique de sommeil")
                           .font(Font.custom("Outfit", size: 25))
                           .fontWeight(.medium)
-                          .foregroundColor(Color(hex: "#BC1C20"))
+                          .foregroundColor(Color("Red"))
                   }
               }
           }

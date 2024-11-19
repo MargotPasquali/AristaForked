@@ -23,14 +23,14 @@ struct ExerciseListView: View {
         NavigationView {
             List(viewModel.exercises) { exercise in
                 exerciseRow(for: exercise)
-                    .listRowBackground(Color(hex: "#FFF9EC"))
+                    .listRowBackground(Color("Beige"))
                     .listRowSeparator(.hidden)
                 
                 
             }
             .listStyle(PlainListStyle())
             .scrollContentBackground(.hidden)
-            .background(Color(hex: "#FFF9EC")
+            .background(Color("Beige")
                 .ignoresSafeArea())
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
@@ -38,7 +38,7 @@ struct ExerciseListView: View {
                         .font(Font.custom("Outfit", size: 25))
                         .font(.largeTitle)
                         .fontWeight(.medium)
-                        .foregroundColor(Color(hex: "#BC1C20"))
+                        .foregroundColor(Color("Red"))
                 }
             }
             .navigationBarItems(trailing: addExerciseButton)
